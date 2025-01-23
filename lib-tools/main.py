@@ -50,8 +50,23 @@ def split_tag(tag) -> list[str]:
         return None
 
 if __name__ == "__main__":
-    directory = input("Enter music library: ")
-    for root, _, files in os.walk(directory):
-        for file in files:
-            fix_tags(os.path.join(root, file))
+    with open("done.txt", "w+") as file:
+        files = file.readlines()
+
+        directory = input("Enter music library: ")
+        for root, _, files in os.walk(directory):
+            for file in files:
+                now_file= os.path.join(root, file)
+
+                if now_file in files:
+                    continue
+
+                try:
+                    fix_tags(now_file)
+                    files.append(now_file)
+                except ValueError:
+                    continue
+                    
+        print("Edited ", len(files), " files!!!")
+        file.writelines(files)
     
