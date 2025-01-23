@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "lib-tools"
+version = "0.1.0"
+description = ""
+authors = ["Aditya Gupta <mail@adityagupta.dev>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+mutagen = "^1.47.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
