@@ -11,7 +11,7 @@ def fix_date(file_location):
 
     if not rel_date:
         return
-    
+    print("Fixing ", audio.tags.get("TITLE"))
     audio["DATE"] = rel_date
 
     audio.save()
