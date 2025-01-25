@@ -5,7 +5,7 @@ def fix_tags(file_path) -> None:
     """
     Correctly splits tags that are just delimited by a comma or semi colon
     """
-
+    print(audio["TITLE"])
     audio = File(file_path)
 
     if not audio:
@@ -22,7 +22,7 @@ def fix_tags(file_path) -> None:
 
     if artists:
         print("Fixing artists tag for ", audio["TITLE"])
-        audio["ARTIST"] = artists
+        audio["ARTIST"] = artists 
     if genres:
         print("Fixing genres tag for ", audio["TITLE"])
         audio["GENRE"] = genres
